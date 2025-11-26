@@ -1,24 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather App</title>
+  <meta name="description"
+    content="Premium e-commerce store with a modern shopping cart experience. Browse our curated collection of products.">
+  <title>LuxeCart - Premium Shopping Experience</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-    <h1>🌦 Weather App</h1>
-    <input type="text" id="cityInput" placeholder="Enter city name" />
-    <button onclick="getWeather()">Get Weather</button>
 
-    <div id="result">
-      <h2 id="city"></h2>
-      <p id="temp"></p>
-      <p id="desc"></p>
-      <p id="humidity"></p>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="logo">
+          <span class="logo-icon">✨</span>
+          LuxeCart
+        </h1>
+        <nav class="nav">
+          <button class="cart-btn" id="cart-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 2L7 6H3L6 19H18L21 6H17L15 2H9Z" />
+              <circle cx="9" cy="20" r="1" />
+              <circle cx="15" cy="20" r="1" />
+            </svg>
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+        </nav>
+      </div>
     </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2 class="hero-title">Discover Premium Products</h2>
+        <p class="hero-subtitle">Curated collection of the finest items, crafted with excellence</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <!-- Products Grid -->
+      <section class="products-section">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid" id="products-grid">
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Shopping Cart Sidebar -->
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h3 class="cart-title">Shopping Cart</h3>
+        <button class="cart-close" id="cart-close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+        <div class="cart-empty" id="cart-empty">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 2L7 6H3L6 19H18L21 6H17L15 2H9Z" />
+            <circle cx="9" cy="20" r="1" />
+            <circle cx="15" cy="20" r="1" />
+          </svg>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+
+      <div class="cart-footer" id="cart-footer">
+        <div class="cart-total">
+          <span class="total-label">Total:</span>
+          <span class="total-amount" id="cart-total">$0.00</span>
+        </div>
+        <button class="checkout-btn">
+          Proceed to Checkout
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+    <span id="toast-message">Item added to cart!</span>
   </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
